@@ -1,0 +1,81 @@
+# Environment Configuration
+
+## Environment variables files
+.env
+.env.development
+.env.test
+
+# Dependency Management
+
+## Yarn Berry
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+## Dependency directories
+node_modules
+
+## Package tarball
+*.tgz
+
+## Compiled binary addons (https://nodejs.org/api/addons.html)
+build/Release
+
+# Build Tools
+
+## Build output
+dist
+.cache
+
+## TypeScript cache
+*.tsbuildinfo
+
+## TypeScript v1 declaration files
+typings/
+
+## Microbundle cache
+.rpt2_cache
+.rts2_cache_cjs
+.rts2_cache_es
+.rts2_cache_umd
+
+## Next.js build output
+.next
+
+## Nuxt.js build output
+.nuxt
+
+## Serverless directories
+.serverless/
+
+# Logs
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+## Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Testing
+
+## Coverage directory used by tools like istanbul
+coverage
+*.lcov
+
+## nyc test coverage
+.nyc_output
+
+# Runtime Data
+
+pids
+*.pid
+*.seed
+*.pid.lock
