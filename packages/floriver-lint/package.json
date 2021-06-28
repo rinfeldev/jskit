@@ -15,12 +15,21 @@
     "types": "./dist/index.d.ts",
     "exports": {
         ".": "./dist/index.js",
+        "./config": "./dist/config/index.js",
+        "./config/transform": "./dist/config/transform.js",
         "./package.json": "./package.json"
     },
     "scripts": {
         "build": "tsc"
     },
     "peerDependencies": {
-        "eslint": "^7.29.0"
+        "@typescript-eslint/eslint-plugin": "^4.28.0",
+        "@typescript-eslint/parser": "^4.28.0",
+        "eslint": "^7.29.0",
+        "eslint-import-resolver-typescript": "^2.4.0",
+        "eslint-plugin-eslint-comments": "^3.2.0",
+        "eslint-plugin-import": "^2.23.0",
+        "eslint-plugin-promise": "^5.1.0",
+        "eslint-plugin-unicorn": "^34.0.0"
     }
 }
