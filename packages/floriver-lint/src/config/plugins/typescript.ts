@@ -1,7 +1,19 @@
 import type { EsLintConfigTransform } from "../transform";
 
 export interface TypeScriptPluginOptions {
+    /**
+     * Path of the workspace root. All project paths are relative to the workspace
+     * root and have to be contained in it.
+     *
+     * **Recommended**: `__dirname`
+     */
     readonly workspaceRootPath: string;
+    /**
+     * Paths of the projects in the workspace relative to the workspace root. The
+     * paths should point to `tsconfig.json` files.
+     *
+     * **Recommmended**: `["./packages/**​/tsconfig.json"]`
+     */
     readonly projectPaths: string[];
 }
 

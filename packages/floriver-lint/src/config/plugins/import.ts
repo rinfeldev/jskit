@@ -1,10 +1,41 @@
 import type { EsLintConfigTransform } from "../transform";
 
 export interface ImportPluginOptions {
+    /**
+     * Paths of the projects in the workspace relative to the workspace root. The
+     * paths should point to `tsconfig.json` files.
+     *
+     * **Recommmended**: `["./packages/**​/tsconfig.json"]`
+     */
     readonly projectPaths: string[];
+    /**
+     * Pattern for package top-level imports. In addition to configuring the path
+     * mapping in TypeScript's `tsconfig.json`, it should also be configured here
+     * for proper import ordering.
+     *
+     * **Default**: `"@/**"`
+     */
     readonly packageTopLevelPattern?: string;
+    /**
+     * Regex for internal module imports. In a monorepo, internal modules are the
+     * modules in packages within the repository. Configure for proper import
+     * ordering.
+     *
+     * **Recommended**: `"^@<workspace>/"`
+     */
     readonly internalModuleRegex?: string;
+    /**
+     * Folder paths of external modules. Configure for proper import ordering.
+     *
+     * **Default**: `[]` (`"node_modules"` is always included.)
+     */
     readonly externalModuleFolders?: string[];
+    /**
+     * Path groups used to amend import ordering with special rules, e.g.
+     * requiring react imports to be at the top of a list of imports.
+     *
+     * @see https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md#pathgroups-array-of-objects
+     */
     readonly importPathGroups?: unknown[];
 }
 
