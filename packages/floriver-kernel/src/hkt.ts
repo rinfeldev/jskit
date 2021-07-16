@@ -3,6 +3,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unnecessary-type-arguments */
 
+import type { Meta } from "./meta";
+
 declare const PlaceholderIndex: unique symbol;
 
 export interface _<N extends number = 0> {
@@ -39,10 +41,15 @@ export type $<T, S extends any[]> =
     // Substitute tuples by recursing into their content types.
     T extends any[] ? { [K in keyof T]: $<T[K], S> } :
     // Substitute objects by recursing into their value types.
-    T extends object ? EqualsOr<T, { [K in keyof T]: $<T[K], S> }> :
+    T extends object ? EqualsOr<T, $Object<T, S>> :
     // Leave any other case as-is. Base case of recursion.
     T;
 /* eslint-enable @typescript-eslint/indent */
+
+type $Object<T extends object, S extends any[]> =
+    T extends Meta.Object<infer Self, infer P>
+        ? { [K in keyof T]: K extends keyof Meta.Object<Self, P> ? T[K] : $<T[K], S>; }
+        : { [K in keyof T]: $<T[K], S> };
 
 type EqualsOr<T, U> =
     T extends U
