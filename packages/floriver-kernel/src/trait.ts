@@ -40,6 +40,9 @@ export namespace Traitlike {
             ? Trait<Symbol, Properties>
             : T;
 
+    /**
+     * Unwraps a trait or a trait namespace into a trait.
+     */
     export function unwrap<T extends Any>(traitlike: T): Unwrap<T> {
         if ("trait" in traitlike)
             return traitlike.trait as Unwrap<T>;
@@ -65,6 +68,12 @@ namespace Internal {
     }
 }
 
+/**
+ * Traits are defined using the `Trait(<symbol>)` constructor function. Each
+ * property has a name available in the trait's scope and a symbol used for
+ * global references. A property is defined through its property descriptor
+ * using `Trait.Property(<symbol>).decl<<type>>()`.
+ */
 export function Trait<
     Symbol extends Trait.Symbol,
     Properties extends Trait.Properties,

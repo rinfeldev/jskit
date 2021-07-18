@@ -1,6 +1,6 @@
 # @floriver/kernel
 
-Package implementing a set of core functionalities, like higher-kinded types (HKT), that other packages build upon.
+Package implementing a set of core functionalities, like higher-kinded types (HKT) and an object model, that other packages build upon.
 
 ## Usage
 
@@ -46,6 +46,94 @@ const EitherBifunctor: Bifunctor<Either<_0, _1>> = {
     // second :: <A, B, C>(f: (v: B) => C, x: Either<A, B>) => Either<A, C>
     second: (f, x) => { ... },
 };
+```
+
+### Object Model
+
+`@floriver/kernel`'s object model is a framework for creating extensible types using pure functions, while maintaining natural syntax, without relying on JavaScript's quasi-OOP features. It is by nature an opinionated way of writing types and is meant to be used by libraries and application models rather than for web APIs and DTOs. It is inspired by Rust's `impl` blocks and uses a model similar to Rust's traits for implementing common functionality and extending the behavior of existing types.
+
+See [📄 Object Model](docs/object_model.md) for more details.
+
+#### Example Type and Trait Declarations
+
+Declare the `Eq` trait for defining equivalence relationships.
+
+```ts
+import { _, Trait } from "@floriver/kernel";
+
+export namespace Eq {
+    namespace symbols {
+        export const trait = Symbol("Eq");
+
+        export const equals = Symbol("Eq.equals");
+    }
+
+    export const trait = Trait(symbols.trait, {
+        equals: Trait.Property(symbols.equals).decl<(other: _) => boolean>(),
+    });
+
+    export type Equals<T> = (self: T, other: T) => boolean;
+}
+```
+
+Declare a `Point` type with methods and an implementation for the `Eq` trait.
+
+```ts
+import { Meta, SelfFunction } from "@floriver/kernel";
+import { Eq } from "./eq";
+
+export interface Point extends Meta.Object<Point, Point.Properties> {
+    readonly x: number;
+    readonly y: number;
+}
+
+export function Point(x: number, y: number): Point {
+    return Point.meta.createObject({
+        x,
+        y,
+    });
+}
+
+export namespace Point {
+    export interface Properties {
+        readonly negate: () => Point;
+        readonly add: (other: Point) => Point;
+        readonly scale: (n: number) => Point;
+    }
+
+    export const meta = Meta<Point, Properties>("Point");
+}
+
+export namespace Point {
+    export function negate(self: Point): Point {
+        return Point(-self.x, -self.y);
+    }
+
+    export function add(self: Point, other: Point): Point {
+        return Point(self.x + other.x, self.y + other.y);
+    }
+
+    export function scale(self: Point, n: number): Point {
+        return Point(n * self.x, n * self.y);
+    }
+}
+
+Point.meta.impl({
+    negate: SelfFunction.bindSelf(Point.negate),
+    add: SelfFunction.bindSelf(Point.add),
+    scale: SelfFunction.bindSelf(Point.scale),
+});
+
+export namespace Point {
+    export const equals: Eq.Equals<Point> = (self, other) => {
+        return self.x === other.x
+            && self.y === other.y;
+    };
+}
+
+Point.meta.implTrait(Eq, {
+    equals: SelfFunction.bindSelf(Point.equals),
+});
 ```
 
 ## Hacking
