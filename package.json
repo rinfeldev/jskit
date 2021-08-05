@@ -6,7 +6,8 @@
     ],
     "scripts": {
         "lint": "eslint .",
-        "lint:build": "yarn workspace @floriver/lint run build"
+        "lint:build": "yarn workspace @floriver/lint run build",
+        "kernel:build": "yarn workspace @floriver/kernel run build"
     },
     "devDependencies": {
         "@floriver/lint": "workspace:*",

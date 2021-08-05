@@ -294,6 +294,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floriver/kernel@workspace:packages/floriver-kernel":
+  version: 0.0.0-use.local
+  resolution: "@floriver/kernel@workspace:packages/floriver-kernel"
+  languageName: unknown
+  linkType: soft
+
 "@floriver/lint@workspace:*, @floriver/lint@workspace:packages/floriver-lint":
   version: 0.0.0-use.local
   resolution: "@floriver/lint@workspace:packages/floriver-lint"
