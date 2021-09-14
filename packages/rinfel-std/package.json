@@ -1,0 +1,39 @@
+{
+    "name": "@rinfel/std",
+    "version": "0.0.0",
+    "description": "Package implementing a standard library that other packages build upon.",
+    "contributors": [
+        "Zalán Bálint Lévai <zalan@idock.hu>"
+    ],
+    "license": "MIT OR Apache-2.0",
+    "homepage": "https://github.com/rinfeldev/jskit#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rinfeldev/jskit.git",
+        "directory": "packages/rinfel-std"
+    },
+    "bugs": {
+        "url": "https://github.com/rinfeldev/jskit/issues"
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist/index.js",
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist",
+        "LICENSE-APACHE",
+        "LICENSE-MIT",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "prepack": "yarn run clean && yarn run build && yarn run resolve-licenses",
+        "postpack": "yarn run symlink-licenses",
+        "resolve-licenses": "rm LICENSE-{APACHE,MIT}; cp ../../LICENSE-{APACHE,MIT} .",
+        "symlink-licenses": "rm LICENSE-{APACHE,MIT}; ln -s ../../LICENSE-{APACHE,MIT} .",
+        "build": "tsc",
+        "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo"
+    }
+}

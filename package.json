@@ -11,7 +11,10 @@
         "lint:do": "yarn workspace @rinfel/lint",
         "kernel:build": "yarn workspace @rinfel/kernel run build",
         "kernel:clean": "yarn workspace @rinfel/kernel run clean",
-        "kernel:do": "yarn workspace @rinfel/kernel"
+        "kernel:do": "yarn workspace @rinfel/kernel",
+        "std:build": "yarn workspace @rinfel/std run build",
+        "std:clean": "yarn workspace @rinfel/std run clean",
+        "std:do": "yarn workspace @rinfel/std"
     },
     "devDependencies": {
         "@rinfel/lint": "workspace:*",

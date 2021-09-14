@@ -378,6 +378,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@rinfel/std@workspace:packages/rinfel-std":
+  version: 0.0.0-use.local
+  resolution: "@rinfel/std@workspace:packages/rinfel-std"
+  languageName: unknown
+  linkType: soft
+
 "@types/eslint@npm:^7.28.0":
   version: 7.28.0
   resolution: "@types/eslint@npm:7.28.0"
