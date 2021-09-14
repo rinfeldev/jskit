@@ -2,7 +2,7 @@
 
 ## Overview
 
-`@floriver/kernel`'s object model is a framework for creating extensible types using pure functions, while maintaining natural syntax, without relying on JavaScript's quasi-OOP features. It is by nature an opinionated way of writing types and is meant to be used by libraries and application models rather than for web APIs and DTOs. It is inspired by Rust's `impl` blocks and uses a model similar to Rust's traits for implementing common functionality and extending the behavior of existing types.
+`@rinfel/kernel`'s object model is a framework for creating extensible types using pure functions, while maintaining natural syntax, without relying on JavaScript's quasi-OOP features. It is by nature an opinionated way of writing types and is meant to be used by libraries and application models rather than for web APIs and DTOs. It is inspired by Rust's `impl` blocks and uses a model similar to Rust's traits for implementing common functionality and extending the behavior of existing types.
 
 ## `Meta`
 
@@ -24,7 +24,7 @@ All type instances have access to their type's `Meta` object through `<type_inst
 First, the type of the object, the type of its shared properties and the `<type>.meta` accessor is declared. The name of the type, the type of `Self` and the type of its instance's shared properties are used in the `Meta` constructor. The value type extends `Meta.Object<Self, Properties>` for proper TypeScript typing.
 
 ```ts
-import { Meta } from "@floriver/kernel";
+import { Meta } from "@rinfel/kernel";
 
 export interface Point extends Meta.Object<Point, Point.Properties> {
     readonly x: number;
@@ -59,8 +59,8 @@ Declare the type's own properties and bind them to the type's `Meta` object usin
 By convention, self functions are used which are functions with their first, `self` argument marking the current receiver. `SelfFunction.bindSelf` can be used to transpose the function into a JavaScript method, a function with a `this` argument.
 
 ```ts
-// NOTE: Merge with existing import of `@floriver/kernel`.
-import { SelfFunction } from "@floriver/kernel";
+// NOTE: Merge with existing import of `@rinfel/kernel`.
+import { SelfFunction } from "@rinfel/kernel";
 
 export namespace Point {
     export function negate(self: Point): Point {
@@ -86,7 +86,7 @@ Point.meta.impl({
 More complex types can also be represented, like discriminated unions:
 
 ```ts
-import { Meta } from "@floriver/kernel";
+import { Meta } from "@rinfel/kernel";
 
 export type Shape =
     | Shape.Triangle
@@ -180,7 +180,7 @@ In the namespace style, the trait object must be assigned to the `trait` propert
 Also note the use of the `_` placeholder type. In this context, `_` represents the type of the receiver, `Self`, and will be substituted for it in implementations of the trait. This is the same `_` placeholder type used in higher-kinded types but it could be thought of as lazy type application as well. See [📄 Higher-Kinded Types (HKT)](hkt.md) for more details.
 
 ```ts
-import { _, Trait } from "@floriver/kernel";
+import { _, Trait } from "@rinfel/kernel";
 
 export namespace Eq {
     ...
@@ -323,7 +323,7 @@ p[Eq.trait.properties.equals.symbol](Point(-3, 1));
 
 ### Requirements
 
-`@floriver/kernel`'s object model relies on some ES6 features:
+`@rinfel/kernel`'s object model relies on some ES6 features:
 
 **Symbols** are used for implementing globally unique accessors for traits and their properties. Consider using [a `Symbol` polyfill](https://github.com/zloirock/core-js#ecmascript-symbol).
 

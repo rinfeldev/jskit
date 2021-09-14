@@ -1,15 +1,15 @@
 {
-    "name": "@floriver/kernel",
+    "name": "@rinfel/kernel",
     "version": "0.0.0",
     "description": "",
     "author": "",
-    "homepage": "https://github.com/floriver/jskit#readme",
+    "homepage": "https://github.com/rinfeldev/jskit#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/floriver/jskit.git"
+        "url": "git+https://github.com/rinfeldev/jskit.git"
     },
     "bugs": {
-        "url": "https://github.com/floriver/jskit/issues"
+        "url": "https://github.com/rinfeldev/jskit/issues"
     },
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",

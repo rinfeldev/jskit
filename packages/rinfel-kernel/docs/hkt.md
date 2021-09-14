@@ -6,13 +6,13 @@ Most type systems, including TypeScript's, support abstracting over types (*with
 
 TypeScript has [no built-in language support for higher-kinded types yet](https://github.com/microsoft/TypeScript/issues/1213). While type constructors may be statically declared, they must always be instantiated before use. Despite this, various attempts have been made to simulate higher-kinded types in the language (most notably [fp-ts](https://github.com/gcanti/fp-ts)). These typically use an [identifier-based mechanism](https://github.com/gcanti/fp-ts/blob/master/docs/guides/HKT.md), where the type constructor is represented by a unique identifier alongside its type arguments (`HKT[N]<Id, A, B, ...>`) and a mapping is provided between it and the desired type (`T<A, B, ...>`).
 
-`@floriver/kernel` uses an alternative, arguably more simplified approach to simulating higher-kinded types. For type constructor `T<A, B, ...>`, if we instantiate the type with unique placeholder types `_0, _1, ...`, resulting in `T<_0, _1, ...>`, then, if we can substitute all instances of the placeholder types `_0, _1, ...` each, we effectively have the ability to use `T<_0, _1, ...>` as a type constructor and apply it at arbitrary types, thus abstracting over the type constructor `T`. We can define such a generic substitution operator `$<T, S>` using TypeScript's mapped types.
+`@rinfel/kernel` uses an alternative, arguably more simplified approach to simulating higher-kinded types. For type constructor `T<A, B, ...>`, if we instantiate the type with unique placeholder types `_0, _1, ...`, resulting in `T<_0, _1, ...>`, then, if we can substitute all instances of the placeholder types `_0, _1, ...` each, we effectively have the ability to use `T<_0, _1, ...>` as a type constructor and apply it at arbitrary types, thus abstracting over the type constructor `T`. We can define such a generic substitution operator `$<T, S>` using TypeScript's mapped types.
 
 Unlike previous approaches, which used identifiers to represent type constructors, we use unique identifiers to represent the type parameters of type constructors. This has the benefit of not needing to specialize the implementation of the substitution operator for every type constructor we might use. The substitution operator `$` works the same for `T1<_0>`, `T2<_0, _1, _2>` and even `(arg0: _0, arg1: _1, arg2: _2, arg3: _3) => _4`. In fact, the substitution operator `$` is really just a mechanism to lazily apply type constructor arguments. For all type constructors `T` with arity `N`, it holds that `T<S0, S1, S2, ..., S[N]> ≡ $<T<_0, _1, _2, ..., _<N>>, [S0, S1, S2, ..., S[N]]>`.
 
 ## Usage
 
-Since abstracting over types is built into TypeScript, `@floriver/kernel`'s higher-kinded types are concerned with abstracting over N-ary type constructors.
+Since abstracting over types is built into TypeScript, `@rinfel/kernel`'s higher-kinded types are concerned with abstracting over N-ary type constructors.
 
 ### Abstracting over Unary Type Constructors
 
@@ -31,7 +31,7 @@ interface Functor<F<_>> {
 }
 ```
 
-With `@floriver/kernel`'s higher-kinded types, `Functor` can be represented like this:
+With `@rinfel/kernel`'s higher-kinded types, `Functor` can be represented like this:
 
 ```ts
 interface Functor<F> {
@@ -73,7 +73,7 @@ interface Bifunctor<F<_, _>> {
 }
 ```
 
-With `@floriver/kernel`'s higher-kinded types, `Bifunctor` can be represented like this:
+With `@rinfel/kernel`'s higher-kinded types, `Bifunctor` can be represented like this:
 
 ```ts
 interface Bifunctor<F> {

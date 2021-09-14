@@ -294,45 +294,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floriver/kernel@workspace:packages/floriver-kernel":
-  version: 0.0.0-use.local
-  resolution: "@floriver/kernel@workspace:packages/floriver-kernel"
-  languageName: unknown
-  linkType: soft
-
-"@floriver/lint@workspace:*, @floriver/lint@workspace:packages/floriver-lint":
-  version: 0.0.0-use.local
-  resolution: "@floriver/lint@workspace:packages/floriver-lint"
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ^4.28.0
-    "@typescript-eslint/parser": ^4.28.0
-    eslint: ^7.30.0
-    eslint-import-resolver-typescript: ^2.4.0
-    eslint-plugin-eslint-comments: ^3.2.0
-    eslint-plugin-import: ^2.23.0
-    eslint-plugin-promise: ^5.1.0
-    eslint-plugin-unicorn: ^34.0.0
-  languageName: unknown
-  linkType: soft
-
-"@floriver/monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@floriver/monorepo@workspace:."
-  dependencies:
-    "@floriver/lint": "workspace:*"
-    "@types/eslint": ^7.28.0
-    "@typescript-eslint/eslint-plugin": ^4.28.3
-    "@typescript-eslint/parser": ^4.28.3
-    eslint: ^7.30.0
-    eslint-import-resolver-typescript: ^2.4.0
-    eslint-plugin-eslint-comments: ^3.2.0
-    eslint-plugin-import: ^2.23.4
-    eslint-plugin-promise: ^5.1.0
-    eslint-plugin-unicorn: ^34.0.1
-    typescript: ^4.3.5
-  languageName: unknown
-  linkType: soft
-
 "@humanwhocodes/config-array@npm:^0.5.0":
   version: 0.5.0
   resolution: "@humanwhocodes/config-array@npm:0.5.0"
@@ -377,6 +338,45 @@ __metadata:
   checksum: ac8e2d9ca000b9f7fca2a7b005b9e476ba7b2f416d2873f64b94b207ed1854bd30f63ced4c221969c5e470ec82fbeb353c97504a86c3838cda11f98660fac284
   languageName: node
   linkType: hard
+
+"@rinfel/kernel@workspace:packages/rinfel-kernel":
+  version: 0.0.0-use.local
+  resolution: "@rinfel/kernel@workspace:packages/rinfel-kernel"
+  languageName: unknown
+  linkType: soft
+
+"@rinfel/lint@workspace:*, @rinfel/lint@workspace:packages/rinfel-lint":
+  version: 0.0.0-use.local
+  resolution: "@rinfel/lint@workspace:packages/rinfel-lint"
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^4.28.0
+    "@typescript-eslint/parser": ^4.28.0
+    eslint: ^7.30.0
+    eslint-import-resolver-typescript: ^2.4.0
+    eslint-plugin-eslint-comments: ^3.2.0
+    eslint-plugin-import: ^2.23.0
+    eslint-plugin-promise: ^5.1.0
+    eslint-plugin-unicorn: ^34.0.0
+  languageName: unknown
+  linkType: soft
+
+"@rinfel/monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@rinfel/monorepo@workspace:."
+  dependencies:
+    "@rinfel/lint": "workspace:*"
+    "@types/eslint": ^7.28.0
+    "@typescript-eslint/eslint-plugin": ^4.28.3
+    "@typescript-eslint/parser": ^4.28.3
+    eslint: ^7.30.0
+    eslint-import-resolver-typescript: ^2.4.0
+    eslint-plugin-eslint-comments: ^3.2.0
+    eslint-plugin-import: ^2.23.4
+    eslint-plugin-promise: ^5.1.0
+    eslint-plugin-unicorn: ^34.0.1
+    typescript: ^4.3.5
+  languageName: unknown
+  linkType: soft
 
 "@types/eslint@npm:^7.28.0":
   version: 7.28.0

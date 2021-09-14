@@ -1,4 +1,4 @@
-# @floriver/lint
+# @rinfel/lint
 
 Package for linting-related code and configurations to ensure source quality and a consistent code style.
 
@@ -10,7 +10,7 @@ Add the package and all of its peer dependencies to your development dependencie
 
 ```sh
 yarn add --dev \
-    @floriver/lint \
+    @rinfel/lint \
     eslint \
     @typescript-eslint/parser \
     @typescript-eslint/eslint-plugin \
@@ -21,10 +21,10 @@ yarn add --dev \
     eslint-plugin-unicorn
 ```
 
-Configure ESLint to use `@floriver/lint`'s configuration by adding the following to your workspace's `.eslintrc.js`:
+Configure ESLint to use `@rinfel/lint`'s configuration by adding the following to your workspace's `.eslintrc.js`:
 
 ```js
-const { EsLintConfig } = require("@floriver/lint/config");
+const { EsLintConfig } = require("@rinfel/lint/config");
 
 module.exports = EsLintConfig.root({
     workspaceRootPath: __dirname,
@@ -85,7 +85,7 @@ See https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/ord
 
 The package consists of the following modules, each covering a certain aspect of linting.
 
-### `@floriver/lint/config`
+### `@rinfel/lint/config`
 
 Modern ESLint config made up of individually configurable plugins.
 
@@ -94,8 +94,8 @@ Plugins configure/implement rules related to certain aspects of linting. Each pl
 The top-level API is `EsLintConfig.root` which generates our root ESLint config. Any config, including the root config, can be extended with further plugins:
 
 ```js
-const { EsLintConfig } = require("@floriver/lint/config");
-const { EsLintConfigTransform } = require("@floriver/lint/config/transform");
+const { EsLintConfig } = require("@rinfel/lint/config");
+const { EsLintConfigTransform } = require("@rinfel/lint/config/transform");
 
 const MyCustomPlugin = (config) => {
     return config;
