@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "description": "",
     "author": "",
+    "license": "MIT OR Apache-2.0",
     "homepage": "https://github.com/rinfeldev/jskit#readme",
     "repository": {
         "type": "git",

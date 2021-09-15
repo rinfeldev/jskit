@@ -145,3 +145,7 @@ As it is the common base dependency of most packages in the repository, it shoul
 ## Contributing
 
 See [📄 `CONTRIBUTING.md` in the repository's root](/CONTRIBUTING.md) for details.
+
+## License
+
+See [#️⃣ License section of the `README.md` in the repository's root](/README.md#license) for details.
