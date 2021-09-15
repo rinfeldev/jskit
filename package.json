@@ -8,8 +8,10 @@
         "lint": "eslint .",
         "lint:build": "yarn workspace @rinfel/lint run build",
         "lint:clean": "yarn workspace @rinfel/lint run clean",
+        "lint:do": "yarn workspace @rinfel/lint",
         "kernel:build": "yarn workspace @rinfel/kernel run build",
-        "kernel:clean": "yarn workspace @rinfel/kernel run clean"
+        "kernel:clean": "yarn workspace @rinfel/kernel run clean",
+        "kernel:do": "yarn workspace @rinfel/kernel"
     },
     "devDependencies": {
         "@rinfel/lint": "workspace:*",
