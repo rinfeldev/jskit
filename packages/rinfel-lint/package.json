@@ -1,8 +1,10 @@
 {
     "name": "@rinfel/lint",
     "version": "0.0.0",
-    "description": "",
-    "author": "",
+    "description": "Package for linting-related code and configurations to ensure source quality and a consistent code style.",
+    "contributors": [
+        "Zalán Bálint Lévai <zalan@idock.hu>"
+    ],
     "license": "MIT OR Apache-2.0",
     "homepage": "https://github.com/rinfeldev/jskit#readme",
     "repository": {

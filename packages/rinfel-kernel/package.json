@@ -1,8 +1,10 @@
 {
     "name": "@rinfel/kernel",
     "version": "0.0.0",
-    "description": "",
-    "author": "",
+    "description": "Package implementing a set of core functionalities, like higher-kinded types (HKT) and an object model, that other packages build upon.",
+    "contributors": [
+        "Zalán Bálint Lévai <zalan@idock.hu>"
+    ],
     "license": "MIT OR Apache-2.0",
     "homepage": "https://github.com/rinfeldev/jskit#readme",
     "repository": {
