@@ -31,7 +31,10 @@
         "README.md"
     ],
     "scripts": {
-        "prepack": "yarn run clean && yarn run build",
+        "prepack": "yarn run clean && yarn run build && yarn run resolve-licenses",
+        "postpack": "yarn run symlink-licenses",
+        "resolve-licenses": "rm LICENSE-{APACHE,MIT}; cp ../../LICENSE-{APACHE,MIT} .",
+        "symlink-licenses": "rm LICENSE-{APACHE,MIT}; ln -s ../../LICENSE-{APACHE,MIT} .",
         "build": "tsc",
         "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo"
     },
