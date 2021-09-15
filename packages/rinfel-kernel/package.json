@@ -1,6 +1,6 @@
 {
     "name": "@rinfel/kernel",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Package implementing a set of core functionalities, like higher-kinded types (HKT) and an object model, that other packages build upon.",
     "contributors": [
         "Zalán Bálint Lévai <zalan@idock.hu>"
