@@ -34,7 +34,7 @@ module.exports = EsLintConfig.root({
 });
 ```
 
-[Adjust configuration](#options) as needed. It is also recommended to add the following listings to your `.eslintignore`:
+[#️⃣ Adjust configuration](#options) as needed. It is also recommended to add the following listings to your `.eslintignore`:
 
 ```
 **/node_modules
@@ -123,4 +123,4 @@ module.exports = myConfig;
 
 ## Contributing
 
-See [`CONTRIBUTING.md` in the repository's root](/CONTRIBUTING.md) for details.
+See [📄 `CONTRIBUTING.md` in the repository's root](/CONTRIBUTING.md) for details.
