@@ -7,7 +7,9 @@
     "scripts": {
         "lint": "eslint .",
         "lint:build": "yarn workspace @rinfel/lint run build",
-        "kernel:build": "yarn workspace @rinfel/kernel run build"
+        "lint:clean": "yarn workspace @rinfel/lint run clean",
+        "kernel:build": "yarn workspace @rinfel/kernel run build",
+        "kernel:clean": "yarn workspace @rinfel/kernel run clean"
     },
     "devDependencies": {
         "@rinfel/lint": "workspace:*",

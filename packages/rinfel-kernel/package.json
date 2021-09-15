@@ -9,7 +9,8 @@
     "homepage": "https://github.com/rinfeldev/jskit#readme",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/rinfeldev/jskit.git"
+        "url": "https://github.com/rinfeldev/jskit.git",
+        "directory": "packages/rinfel-kernel"
     },
     "bugs": {
         "url": "https://github.com/rinfeldev/jskit/issues"
@@ -20,7 +21,16 @@
         ".": "./dist/index.js",
         "./package.json": "./package.json"
     },
+    "files": [
+        "dist",
+        "LICENSE-APACHE",
+        "LICENSE-MIT",
+        "package.json",
+        "README.md"
+    ],
     "scripts": {
-        "build": "tsc"
+        "prepack": "yarn run clean && yarn run build",
+        "build": "tsc",
+        "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo"
     }
 }
