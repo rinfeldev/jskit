@@ -13,6 +13,7 @@
         "kernel:clean": "yarn workspace @rinfel/kernel run clean",
         "kernel:do": "yarn workspace @rinfel/kernel"
     },
+    "packageManager": "yarn@3.1.1",
     "devDependencies": {
         "@rinfel/eslint-plugin-unicorn": "40.0.0-1",
         "@rinfel/lint": "workspace:*",
