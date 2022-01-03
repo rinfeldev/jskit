@@ -45,10 +45,21 @@ export const UnicornPlugin: EsLintConfigTransform = (config) => {
             },
         ],
         /**
-         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-fn-reference-in-iterator.md
+         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-callback-reference.md
          */
         // Use of this rule is not warranted, especially with TypeScript.
         "@rinfel/unicorn/no-array-callback-reference": "off",
+        /**
+         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md
+         */
+        // This rule's pattern matching matches `map` functions on types other than `Array`.
+        "@rinfel/unicorn/no-array-method-this-argument": "off",
+        /**
+         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-reduce.md
+         */
+        // While some `Array#reduce()` code can be refactored into more readable code using other methods, that does not rule
+        // its use out. Misuses of `Array#reduce()` are dealt with in PRs.
+        "@rinfel/unicorn/no-array-reduce": "off",
         /**
          * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md
          */
@@ -59,12 +70,6 @@ export const UnicornPlugin: EsLintConfigTransform = (config) => {
         // `null` and `undefined` - while both nullish values - represent different ideas and are also used differently from
         // each other in already existing libraries.
         "@rinfel/unicorn/no-null": "off",
-        /**
-         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-reduce.md
-         */
-        // While some `Array#reduce()` code can be refactored into more readable code using other methods, that does not rule
-        // its use out. Misuses of `Array#reduce()` are dealt with in PRs.
-        "@rinfel/unicorn/no-array-reduce": "off",
         /**
          * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md
          */
@@ -87,6 +92,13 @@ export const UnicornPlugin: EsLintConfigTransform = (config) => {
          * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md
          */
         "@rinfel/unicorn/relative-url-style": ["warn", "always"],
+        /**
+         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md
+         */
+        "@rinfel/unicorn/template-indent": [
+            "warn",
+            { indent: 4 },
+        ],
     };
 
     return config;
