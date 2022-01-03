@@ -39,13 +39,13 @@
         "clean": "rm -rf ./dist ./tsconfig.tsbuildinfo"
     },
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^4.31.0",
-        "@typescript-eslint/parser": "^4.31.0",
-        "eslint": "^7.32.0",
+        "@rinfel/eslint-plugin-unicorn": "^40.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.8.0",
+        "@typescript-eslint/parser": "^5.8.0",
+        "eslint": "^8.6.0",
         "eslint-import-resolver-typescript": "^2.5.0",
         "eslint-plugin-eslint-comments": "^3.2.0",
-        "eslint-plugin-import": "^2.24.0",
-        "eslint-plugin-promise": "^5.1.0",
-        "eslint-plugin-unicorn": "^34.0.0"
+        "eslint-plugin-import": "^2.25.0",
+        "eslint-plugin-promise": "^6.0.0"
     }
 }
