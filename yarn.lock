@@ -101,6 +101,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rinfel/eslint-plugin-unicorn@npm:40.0.0-1":
+  version: 40.0.0-1
+  resolution: "@rinfel/eslint-plugin-unicorn@npm:40.0.0-1"
+  dependencies:
+    "@babel/helper-validator-identifier": ^7.15.7
+    ci-info: ^3.3.0
+    clean-regexp: ^1.0.0
+    eslint-utils: ^3.0.0
+    esquery: ^1.4.0
+    indent-string: ^4.0.0
+    is-builtin-module: ^3.1.0
+    lodash: ^4.17.21
+    pluralize: ^8.0.0
+    read-pkg-up: ^7.0.1
+    regexp-tree: ^0.1.24
+    safe-regex: ^2.1.1
+    semver: ^7.3.5
+    strip-indent: ^3.0.0
+  peerDependencies:
+    eslint: ">=7.32.0"
+  checksum: 45be1f83953dd0d481dae45b50193cd46c197ce22ea791faa93832378771d6b37ae699837475829f9225f32f51a429abee5a13f39c7627f53abd0adefbee2427
+  languageName: node
+  linkType: hard
+
 "@rinfel/kernel@workspace:packages/rinfel-kernel":
   version: 0.0.0-use.local
   resolution: "@rinfel/kernel@workspace:packages/rinfel-kernel"
@@ -111,6 +135,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rinfel/lint@workspace:packages/rinfel-lint"
   peerDependencies:
+    "@rinfel/eslint-plugin-unicorn": ^40.0.0-1
     "@typescript-eslint/eslint-plugin": ^5.8.0
     "@typescript-eslint/parser": ^5.8.0
     eslint: ^8.6.0
@@ -118,7 +143,6 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: ^2.25.0
     eslint-plugin-promise: ^6.0.0
-    eslint-plugin-unicorn: ^40.0.0
   languageName: unknown
   linkType: soft
 
@@ -126,6 +150,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rinfel/monorepo@workspace:."
   dependencies:
+    "@rinfel/eslint-plugin-unicorn": 40.0.0-1
     "@rinfel/lint": "workspace:*"
     "@types/eslint": ^8.2.1
     "@typescript-eslint/eslint-plugin": ^5.8.1
@@ -135,7 +160,6 @@ __metadata:
     eslint-plugin-eslint-comments: ^3.2.0
     eslint-plugin-import: ^2.25.4
     eslint-plugin-promise: ^6.0.0
-    eslint-plugin-unicorn: ^40.0.0
     typescript: ^4.5.4
   languageName: unknown
   linkType: soft
@@ -755,30 +779,6 @@ __metadata:
   peerDependencies:
     eslint: ^7.0.0 || ^8.0.0
   checksum: 7e761507c51267b77e4ad710e7c8938aa4f8f69b975886034e57497a1816e9527eda364e25aac03d1b4e0df2e738ba98e49ad075d028824fcfea533a1419751c
-  languageName: node
-  linkType: hard
-
-"eslint-plugin-unicorn@npm:^40.0.0":
-  version: 40.0.0
-  resolution: "eslint-plugin-unicorn@npm:40.0.0"
-  dependencies:
-    "@babel/helper-validator-identifier": ^7.15.7
-    ci-info: ^3.3.0
-    clean-regexp: ^1.0.0
-    eslint-utils: ^3.0.0
-    esquery: ^1.4.0
-    indent-string: ^4.0.0
-    is-builtin-module: ^3.1.0
-    lodash: ^4.17.21
-    pluralize: ^8.0.0
-    read-pkg-up: ^7.0.1
-    regexp-tree: ^0.1.24
-    safe-regex: ^2.1.1
-    semver: ^7.3.5
-    strip-indent: ^3.0.0
-  peerDependencies:
-    eslint: ">=7.32.0"
-  checksum: 2397ab10b28bd67e08c227c894e7066619e5b6140d4fd6df228782e0e3e2c2518f5ca839bd8e20ebfd7adde341beab71763f8ca38b3c2c1fc59bd0b5e0e5a3c9
   languageName: node
   linkType: hard
 

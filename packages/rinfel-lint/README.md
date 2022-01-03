@@ -18,7 +18,7 @@ yarn add --dev \
     eslint-plugin-import \
     eslint-import-resolver-typescript \
     eslint-plugin-promise \
-    eslint-plugin-unicorn
+    @rinfel/eslint-plugin-unicorn
 ```
 
 Configure ESLint to use `@rinfel/lint`'s configuration by adding the following to your workspace's `.eslintrc.js`:
