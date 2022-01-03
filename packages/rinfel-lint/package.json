@@ -1,6 +1,6 @@
 {
     "name": "@rinfel/lint",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Package for linting-related code and configurations to ensure source quality and a consistent code style.",
     "contributors": [
         "Zalán Bálint Lévai <zalan@idock.hu>"
