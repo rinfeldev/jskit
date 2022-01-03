@@ -83,6 +83,10 @@ export const UnicornPlugin: EsLintConfigTransform = (config) => {
          */
         // Common abbreviations are known and readable.
         "@rinfel/unicorn/prevent-abbreviations": "off",
+        /**
+         * @see https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md
+         */
+        "@rinfel/unicorn/relative-url-style": ["warn", "always"],
     };
 
     return config;
